@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 from pydantic import BaseModel
 from typing import Optional
 
@@ -6,7 +6,7 @@ class RecordsBase(BaseModel):
     employee_name: str
     employee_id: str
     workplace: str
-    # day_worked
+    day_worked: date
     # shift_start: datetime.time = None
     # shift_end: datetime.time = None
     # lunch_time_start: datetime.time = None
@@ -27,7 +27,7 @@ class RecordsRead(RecordsBase):
 class RecordsUpdate(RecordsBase):
     employee_name: Optional[str] = None
     employee_id: Optional[str] = None
-    # day_worked
+    day_worked: Optional[date] = None
     workplace: Optional[str] = None
     # shift_start: Optional[datetime.time] = None
     # shift_end: Optional[datetime.time] = None
