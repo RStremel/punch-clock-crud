@@ -36,5 +36,3 @@ def update_record_route(record_id: int, record: RecordsUpdate, db: Session = Dep
     if db_records is None:
         raise HTTPException(status_code=404, detail="Record nt found.")
     return db_records
-
-
