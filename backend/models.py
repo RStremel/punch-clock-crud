@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, Time, DateTime
+from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.sql import func
 from database import Base
 
@@ -9,10 +9,10 @@ class RecordsModel(Base):
     employee_name = Column(String)
     employee_id = Column(String)
     workplace = Column(String)
-    day_worked = Column(Date)
-    shift_start = Column(Time)
-    shift_end = Column(Time)
-    lunch_start = Column(Time)
-    lunch_end = Column(Time)
-    period_worked = Column(Time)
+    day_worked = Column(String)
+    shift_start = Column(String)
+    shift_end = Column(String)
+    shift_end = Column(String)
+    lunch_start = Column(String)
+    lunch_end = Column(String)
     created_at = Column(DateTime(timezone=True), default=func.now())

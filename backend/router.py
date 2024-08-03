@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 from schemas import RecordsCreate, RecordsRead, RecordsUpdate
 from typing import List
-from crud import delete_record, get_all_records, get_record_by_id, get_record_by_employee_id, create_record, update_record
+from crud import delete_record, get_all_records, get_record_by_id, create_record, update_record
 
 router = APIRouter()
 
@@ -32,7 +32,7 @@ def detele_record_route(record_id: int, db: Session = Depends(get_db)):
 
 @router.put("/records/{record_id}", response_model=RecordsRead)
 def update_record_route(record_id: int, record: RecordsUpdate, db: Session = Depends(get_db)):
-    db_records = update_record(db, recod_id=record_id, record=record)
+    db_records = update_record(db, record_id=record_id, record=record)
     if db_records is None:
         raise HTTPException(status_code=404, detail="Record nt found.")
     return db_records

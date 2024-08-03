@@ -62,8 +62,6 @@ def update_record(db: Session, record_id: int, record: RecordsUpdate):
         db_record.lunch_start = record.lunch_start
     if record.lunch_end is not None:
         db_record.lunch_end = record.lunch_end
-    if record.period_worked is not None:
-        db_record.period_worked = record.period_worked
 
     db.commit()
     db.refresh(db_record)
