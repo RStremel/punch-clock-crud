@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide", 
     initial_sidebar_state="auto",
     menu_items={
-        "About": "A punch clock webapp that performs CRUD operation in a Postgres database using SQLAlchemy, FastAPI and Pydantic,\
+        "About": "A punch clock webapp that performs CRUD operations in a Postgres database using SQLAlchemy, FastAPI and Pydantic,\
               hosted on Streamlit and containerized in Docker.",
         "Get Help": "https://github.com/RStremel/punch-clock-crud"
     })
